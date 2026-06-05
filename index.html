@@ -76,41 +76,8 @@
       <!-- Quiz List -->
       <div class="quiz-list-section">
         <h2>Select a Lesson & Quiz</h2>
-        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
-          
-          <!-- Quiz 1 (Active) -->
-          <div class="quiz-card">
-            <div class="quiz-info">
-              <h3>Quiz 1 – 我和家人 (Me and My Family)</h3>
-              <div class="quiz-meta">
-                <span>📝 20 Questions</span>
-                <span>🗣️ Listening & Text matching</span>
-              </div>
-            </div>
-            <div class="quiz-status">
-              <span id="quiz-1-score-badge" class="quiz-score-badge" style="display: none; margin-right: 1rem;">Score: 100%</span>
-              <button onclick="startQuiz(1)" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
-                Start Quiz 🚀
-              </button>
-            </div>
-          </div>
-
-          <!-- Quiz 2 (Locked / Coming Soon) -->
-          <div class="quiz-card" style="opacity: 0.6; cursor: not-allowed;">
-            <div class="quiz-info">
-              <h3>Quiz 2 – 数字和颜色 (Numbers & Colors)</h3>
-              <div class="quiz-meta">
-                <span>📝 15 Questions</span>
-                <span>🎨 Audio matches & colors</span>
-              </div>
-            </div>
-            <div class="quiz-status">
-              <span style="font-weight: bold; color: var(--text-light); display: inline-flex; align-items: center; gap: 0.3rem;">
-                🔒 Coming Soon
-              </span>
-            </div>
-          </div>
-
+        <div id="quiz-list-container" style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          <!-- Generated dynamically -->
         </div>
       </div>
     </div>
@@ -169,15 +136,49 @@
           shelf.innerHTML = `<span style="color: var(--text-light); font-style: italic;">No badges earned yet. Complete Quiz 1 to earn badges!</span>`;
         }
 
-        // Quiz 1 score status
-        const q1Progress = STATE.currentKid.progress["quiz_1"];
-        const q1ScoreBadge = document.getElementById("quiz-1-score-badge");
-        if (q1Progress) {
-          q1ScoreBadge.style.display = "inline-block";
-          q1ScoreBadge.textContent = `Completed: ${q1Progress.score}/${q1Progress.total} (${q1Progress.percentage}%)`;
-        } else {
-          q1ScoreBadge.style.display = "none";
-        }
+        // Render Quiz List
+        const quizListContainer = document.getElementById("quiz-list-container");
+        quizListContainer.innerHTML = QUIZ_INDEX.map(quiz => {
+          const progress = STATE.currentKid.progress[`quiz_${quiz.id}`];
+          const scoreBadge = progress 
+            ? `<span class="quiz-score-badge" style="margin-right: 1rem;">Completed: ${progress.score}/${progress.total} (${progress.percentage}%)</span>`
+            : "";
+            
+          if (quiz.active) {
+            return `
+              <div class="quiz-card">
+                <div class="quiz-info">
+                  <h3>${quiz.title}</h3>
+                  <div class="quiz-meta">
+                    <span>${quiz.meta}</span>
+                  </div>
+                </div>
+                <div class="quiz-status">
+                  ${scoreBadge}
+                  <button onclick="startQuiz(${quiz.id})" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                    Start Quiz 🚀
+                  </button>
+                </div>
+              </div>
+            `;
+          } else {
+            return `
+              <div class="quiz-card" style="opacity: 0.6; cursor: not-allowed;">
+                <div class="quiz-info">
+                  <h3>${quiz.title}</h3>
+                  <div class="quiz-meta">
+                    <span>${quiz.meta}</span>
+                  </div>
+                </div>
+                <div class="quiz-status">
+                  <span style="font-weight: bold; color: var(--text-light); display: inline-flex; align-items: center; gap: 0.3rem;">
+                    🔒 Coming Soon
+                  </span>
+                </div>
+              </div>
+            `;
+          }
+        }).join("");
 
       } else {
         // Logged out / Registration Page

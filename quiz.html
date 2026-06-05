@@ -106,24 +106,39 @@
         return;
       }
       
-      document.getElementById("user-display-name").textContent = STATE.currentKid.nickname;
-      document.getElementById("total-q-num").textContent = QUIZ_DATA.questions.length;
+      const urlParams = new URLSearchParams(window.location.search);
+      const quizId = urlParams.get('id') || 1;
       
-      renderQuestion();
+      const script = document.createElement('script');
+      script.src = `quizzes/quiz${quizId}.js`;
+      script.onload = () => {
+        if (!window.QUIZ_DATA) {
+          alert("Error loading quiz questions.");
+          return;
+        }
+        document.getElementById("user-display-name").textContent = STATE.currentKid.nickname;
+        document.getElementById("total-q-num").textContent = window.QUIZ_DATA.questions.length;
+        renderQuestion();
+      };
+      script.onerror = () => {
+        alert("Could not load the requested quiz.");
+        window.location.href = "index.html";
+      };
+      document.head.appendChild(script);
     });
 
     function renderQuestion() {
-      const q = QUIZ_DATA.questions[currentQuestionIndex];
+      const q = window.QUIZ_DATA.questions[currentQuestionIndex];
       const container = document.getElementById("question-area");
       
       // Update header info
       document.getElementById("current-q-num").textContent = currentQuestionIndex + 1;
-      const progressPercent = ((currentQuestionIndex + 1) / QUIZ_DATA.questions.length) * 100;
+      const progressPercent = ((currentQuestionIndex + 1) / window.QUIZ_DATA.questions.length) * 100;
       document.getElementById("progress-bar").style.width = `${progressPercent}%`;
 
       // Update Navigation button labels
       const nextBtn = document.getElementById("next-btn");
-      if (currentQuestionIndex === QUIZ_DATA.questions.length - 1) {
+      if (currentQuestionIndex === window.QUIZ_DATA.questions.length - 1) {
         nextBtn.textContent = "Submit Quiz 🎉";
         nextBtn.style.background = "var(--accent)";
       } else {
@@ -211,7 +226,7 @@
 
     function navigateQuestion(step) {
       // Validate that an answer is entered/selected before moving on (optional, let's allow skipping but prompt)
-      const q = QUIZ_DATA.questions[currentQuestionIndex];
+      const q = window.QUIZ_DATA.questions[currentQuestionIndex];
       
       if (step === 1 && !answers[q.id]) {
         if (!confirm("You haven't answered this question yet. Do you want to continue?")) {
@@ -219,7 +234,7 @@
         }
       }
 
-      if (currentQuestionIndex + step >= QUIZ_DATA.questions.length) {
+      if (currentQuestionIndex + step >= window.QUIZ_DATA.questions.length) {
         // Submit quiz
         submitQuiz();
       } else {
@@ -229,7 +244,9 @@
     }
 
     function submitQuiz() {
-      const resultObj = gradeQuiz(1, answers);
+      const urlParams = new URLSearchParams(window.location.search);
+      const quizId = parseInt(urlParams.get('id') || 1);
+      const resultObj = gradeQuiz(quizId, answers);
       if (!resultObj) return;
 
       // Hide runner, show results
@@ -243,7 +260,7 @@
       // Render Review List
       const reviewContainer = document.getElementById("review-list-container");
       
-      const reviewHtml = QUIZ_DATA.questions.map((q, idx) => {
+      const reviewHtml = window.QUIZ_DATA.questions.map((q, idx) => {
         const itemResult = resultObj.results.find(r => r.questionId === q.id);
         const statusClass = itemResult.isCorrect ? "correct" : "incorrect";
         const statusText = itemResult.isCorrect ? "✨ Correct!" : "❌ Try Again";
