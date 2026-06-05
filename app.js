@@ -10,9 +10,9 @@ const QUIZ_INDEX = [
   },
   {
     id: 2,
-    title: "Quiz 2 – 数字和颜色 (Numbers & Colors)",
-    meta: "📝 15 Questions | 🎨 Audio matches & colors",
-    active: false
+    title: "Quiz 2 – 我喜欢吃什么 (What I Like to Eat)",
+    meta: "📝 20 Questions | 🍔 Food & Drinks",
+    active: true
   }
 ];
 
