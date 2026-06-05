@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABC Chinese - Fun Learning Portal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo" onclick="window.location.reload()">
+      <span>🐼</span> ABC Chinese
+    </div>
+    <div id="user-section" class="user-profile-badge" style="display: none;">
+      <span id="user-avatar">👦</span>
+      <span id="user-display-name">Student</span>
+      <button class="btn-logout" onclick="handleLogout()">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Authentication / Registration View -->
+    <div id="auth-view" class="glass-panel auth-container">
+      <h1>Welcome to ABC Chinese! 🐼</h1>
+      <p>Enter your Register ID to start learning and playing quizzes!</p>
+      
+      <form id="login-form" onsubmit="handleLoginSubmit(event)">
+        <div class="form-group">
+          <label for="kid-id">Register ID (Short nickname or number)</label>
+          <input type="text" id="kid-id" class="form-control" placeholder="e.g. Kevin123" required autocomplete="username">
+        </div>
+        <div class="form-group">
+          <label for="kid-nickname">Your Name (Optional)</label>
+          <input type="text" id="kid-nickname" class="form-control" placeholder="e.g. Kevin" autocomplete="name">
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; justify-content: center;">
+          Let's Go! 🚀
+        </button>
+      </form>
+
+      <div id="recent-profiles-section" style="margin-top: 2rem; display: none;">
+        <p style="margin-bottom: 0.8rem; font-size: 0.95rem; font-weight: bold; color: var(--text-light);">
+          Or choose an existing learner profile:
+        </p>
+        <div id="profiles-list" style="display: flex; flex-wrap: wrap; gap: 0.8rem; justify-content: center;">
+          <!-- Generated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Dashboard View -->
+    <div id="dashboard-view" class="glass-panel" style="display: none; max-width: 800px;">
+      <h1 class="dashboard-title">Welcome back, <span id="dash-name" style="color: var(--primary);">Learner</span>! 🌟</h1>
+      
+      <!-- Statistics -->
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-val" id="stat-completed">0</div>
+          <div class="stat-label">Quizzes Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-val" id="stat-avg-score">0%</div>
+          <div class="stat-label">Average Score</div>
+        </div>
+      </div>
+
+      <!-- Badges Shelf -->
+      <div style="text-align: center; margin-bottom: 2.5rem;">
+        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 0.5rem;">My Badges 🏆</h2>
+        <div id="badges-shelf" class="badges-container">
+          <span style="color: var(--text-light); font-style: italic;">No badges earned yet. Complete Quiz 1!</span>
+        </div>
+      </div>
+
+      <!-- Quiz List -->
+      <div class="quiz-list-section">
+        <h2>Select a Lesson & Quiz</h2>
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1rem;">
+          
+          <!-- Quiz 1 (Active) -->
+          <div class="quiz-card">
+            <div class="quiz-info">
+              <h3>Quiz 1 – 我和家人 (Me and My Family)</h3>
+              <div class="quiz-meta">
+                <span>📝 20 Questions</span>
+                <span>🗣️ Listening & Text matching</span>
+              </div>
+            </div>
+            <div class="quiz-status">
+              <span id="quiz-1-score-badge" class="quiz-score-badge" style="display: none; margin-right: 1rem;">Score: 100%</span>
+              <button onclick="startQuiz(1)" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 1rem;">
+                Start Quiz 🚀
+              </button>
+            </div>
+          </div>
+
+          <!-- Quiz 2 (Locked / Coming Soon) -->
+          <div class="quiz-card" style="opacity: 0.6; cursor: not-allowed;">
+            <div class="quiz-info">
+              <h3>Quiz 2 – 数字和颜色 (Numbers & Colors)</h3>
+              <div class="quiz-meta">
+                <span>📝 15 Questions</span>
+                <span>🎨 Audio matches & colors</span>
+              </div>
+            </div>
+            <div class="quiz-status">
+              <span style="font-weight: bold; color: var(--text-light); display: inline-flex; align-items: center; gap: 0.3rem;">
+                🔒 Coming Soon
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>🐼 Made with ❤️ for ABC kids learning Chinese.</p>
+  </footer>
+
+  <script src="app.js"></script>
+  <script>
+    // Page Controller logic
+    document.addEventListener("DOMContentLoaded", () => {
+      initAppState();
+      renderPage();
+    });
+
+    function renderPage() {
+      const authView = document.getElementById("auth-view");
+      const dashboardView = document.getElementById("dashboard-view");
+      const userSection = document.getElementById("user-section");
+
+      if (STATE.currentKid) {
+        // Logged in
+        authView.style.display = "none";
+        dashboardView.style.display = "block";
+        userSection.style.display = "flex";
+
+        // Set User details
+        document.getElementById("user-display-name").textContent = STATE.currentKid.nickname;
+        document.getElementById("dash-name").textContent = STATE.currentKid.nickname;
+
+        // Statistics
+        const quizKeys = Object.keys(STATE.currentKid.progress);
+        const completedCount = quizKeys.length;
+        document.getElementById("stat-completed").textContent = completedCount;
+
+        if (completedCount > 0) {
+          let totalPercentage = 0;
+          quizKeys.forEach(k => {
+            totalPercentage += STATE.currentKid.progress[k].percentage;
+          });
+          const avg = Math.round(totalPercentage / completedCount);
+          document.getElementById("stat-avg-score").textContent = `${avg}%`;
+        } else {
+          document.getElementById("stat-avg-score").textContent = "0%";
+        }
+
+        // Render Badges
+        const shelf = document.getElementById("badges-shelf");
+        if (STATE.currentKid.badges && STATE.currentKid.badges.length > 0) {
+          shelf.innerHTML = STATE.currentKid.badges
+            .map(badge => `<span class="badge-item">${badge}</span>`)
+            .join("");
+        } else {
+          shelf.innerHTML = `<span style="color: var(--text-light); font-style: italic;">No badges earned yet. Complete Quiz 1 to earn badges!</span>`;
+        }
+
+        // Quiz 1 score status
+        const q1Progress = STATE.currentKid.progress["quiz_1"];
+        const q1ScoreBadge = document.getElementById("quiz-1-score-badge");
+        if (q1Progress) {
+          q1ScoreBadge.style.display = "inline-block";
+          q1ScoreBadge.textContent = `Completed: ${q1Progress.score}/${q1Progress.total} (${q1Progress.percentage}%)`;
+        } else {
+          q1ScoreBadge.style.display = "none";
+        }
+
+      } else {
+        // Logged out / Registration Page
+        authView.style.display = "block";
+        dashboardView.style.display = "none";
+        userSection.style.display = "none";
+
+        // Render profile select shortcuts if exists
+        const profilesList = document.getElementById("profiles-list");
+        const recentSection = document.getElementById("recent-profiles-section");
+        const kidIds = Object.keys(STATE.allKids);
+
+        if (kidIds.length > 0) {
+          recentSection.style.display = "block";
+          profilesList.innerHTML = kidIds
+            .map(id => {
+              const kid = STATE.allKids[id];
+              return `
+                <button type="button" class="btn-secondary" onclick="quickLogin('${kid.id}')">
+                  👦 ${kid.nickname}
+                </button>
+              `;
+            })
+            .join("");
+        } else {
+          recentSection.style.display = "none";
+        }
+      }
+    }
+
+    function handleLoginSubmit(event) {
+      event.preventDefault();
+      const id = document.getElementById("kid-id").value;
+      const nickname = document.getElementById("kid-nickname").value;
+      if (loginKid(id, nickname)) {
+        renderPage();
+      }
+    }
+
+    function quickLogin(id) {
+      if (loginKid(id, "")) {
+        renderPage();
+      }
+    }
+
+    function handleLogout() {
+      logoutKid();
+      renderPage();
+    }
+
+    function startQuiz(quizId) {
+      window.location.href = `quiz.html?id=${quizId}`;
+    }
+  </script>
+</body>
+</html>
