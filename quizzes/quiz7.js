@@ -48,7 +48,7 @@ window.QUIZ_DATA = {
     {
       id: 4,
       type: "image-match",
-      image: "assets/placeholder_broke_bowl.svg",
+      image: "assets/broke_bowl_sorry.png",
       question: "他(tā)应(yīng)该(gāi)说(shuō)什(shén)么(me)？",
       options: [
         { key: "A", text: "没关系 (méi guān xi)" },
@@ -61,7 +61,7 @@ window.QUIZ_DATA = {
     {
       id: 5,
       type: "image-match",
-      image: "assets/placeholder_checkmark.svg",
+      image: "assets/red_checkmark_board.png",
       question: "这(zhè)个(ge)符(fú)号(hào)代(dài)表(biǎo) _____。",
       options: [
         { key: "A", text: "对 (duì)" },
@@ -74,7 +74,7 @@ window.QUIZ_DATA = {
     {
       id: 6,
       type: "image-match",
-      image: "assets/placeholder_watching_tv.svg",
+      image: "assets/kids_watching_tv.png",
       question: "他(tā)们(men)在(zài) _____ 电(diàn)视(shì) (TV)。",
       options: [
         { key: "A", text: "看 (kàn)" },
