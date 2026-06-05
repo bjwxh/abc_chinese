@@ -151,9 +151,9 @@ const QUIZ_DATA = {
       type: "choice",
       question: "他(tā)们(men)是(shì) _____ ？(Who are they?)",
       options: [
-        { key: "A", text: "谁" },
-        { key: "B", text: "哪里" },
-        { key: "C", text: "什么" }
+        { key: "A", text: "谁 (shuí)" },
+        { key: "B", text: "哪里 (nǎlǐ)" },
+        { key: "C", text: "什么 (shénme)" }
       ],
       answer: "A",
       explanation: "A - 解析：问“是谁”用疑问词“谁”(who)。"
@@ -163,9 +163,9 @@ const QUIZ_DATA = {
       type: "choice",
       question: "我(wǒ)有(yǒu)一(yì)只(zhī)大(dà) _____。(dog)",
       options: [
-        { key: "A", text: "猫" },
-        { key: "B", text: "狗" },
-        { key: "C", text: "鱼" }
+        { key: "A", text: "猫 (māo)" },
+        { key: "B", text: "狗 (gǒu)" },
+        { key: "C", text: "鱼 (yú)" }
       ],
       answer: "B",
       explanation: "B - 解析：根据英文提示 dog 选“狗”。"
@@ -175,9 +175,9 @@ const QUIZ_DATA = {
       type: "choice",
       question: "找出句子中的错字：“这是我妹妹，他今年八岁。”",
       options: [
-        { key: "A", text: "是" },
-        { key: "B", text: "妹" },
-        { key: "C", text: "他" }
+        { key: "A", text: "是 (shì)" },
+        { key: "B", text: "妹 (mèi)" },
+        { key: "C", text: "他 (tā)" }
       ],
       answer: "C",
       explanation: "C - 解析：妹妹是女孩，应该用女字旁的“她”(she) 而不是“他”。"
@@ -187,9 +187,9 @@ const QUIZ_DATA = {
       type: "choice",
       question: "找出句子中的错字：“她有一只小猫，两只小兔孑。”",
       options: [
-        { key: "A", text: "有" },
-        { key: "B", text: "只" },
-        { key: "C", text: "孑" }
+        { key: "A", text: "有 (yǒu)" },
+        { key: "B", text: "只 (zhī)" },
+        { key: "C", text: "孑 (jié)" }
       ],
       answer: "C",
       explanation: "C - 解析：兔子(rabbit) 的“子”写成了错误的“孑”。"
