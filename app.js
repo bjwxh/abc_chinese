@@ -31,6 +31,12 @@ const QUIZ_INDEX = [
     title: "Quiz 5 – 一天的作息 (Daily Routine)",
     meta: "📝 20 Questions | ⏰ Daily Routine & Time",
     active: true
+  },
+  {
+    id: 6,
+    title: "Quiz 6 – 综合复习 (Comprehensive Review: Family, Food, Feelings & Time)",
+    meta: "📝 20 Questions | 🏆 Comprehensive Review",
+    active: true
   }
 ];
 
