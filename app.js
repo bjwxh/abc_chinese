@@ -139,9 +139,9 @@ const QUIZ_DATA = {
       type: "choice",
       question: "我(wǒ)很(hěn) _____ 我(wǒ)的(de)爸(bà)爸(ba)和(hé)妈(mā)妈(ma)。(love)",
       options: [
-        { key: "A", text: "叫" },
-        { key: "B", text: "是" },
-        { key: "C", text: "爱" }
+        { key: "A", text: "叫 (jiào)" },
+        { key: "B", text: "是 (shì)" },
+        { key: "C", text: "爱 (ài)" }
       ],
       answer: "C",
       explanation: "C - 解析：表达喜欢和感情用动词“爱”(love)。"
