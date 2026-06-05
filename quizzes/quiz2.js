@@ -99,7 +99,7 @@ window.QUIZ_DATA = {
     {
       id: 8,
       type: "choice",
-      question: "果(guǒ)汁(zhī)和(水)(shuǐ)，我(wǒ)们(men)要(yào)用(yòng)哪(nǎ)个(gè)动(dòng)词(cí)？",
+      question: "果(guǒ)汁(zhī)和(hé)水(shuǐ)，我(wǒ)们(men)要(yào)用(yòng)哪(nǎ)个(gè)动(dòng)词(cí)？",
       options: [
         { key: "A", text: "吃 (chī)" },
         { key: "B", text: "喝 (hē)" },
