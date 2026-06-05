@@ -37,6 +37,12 @@ const QUIZ_INDEX = [
     title: "Quiz 6 – 综合复习 (Comprehensive Review: Family, Food, Feelings & Time)",
     meta: "📝 20 Questions | 🏆 Comprehensive Review",
     active: true
+  },
+  {
+    id: 7,
+    title: "Quiz 7 – 提问与礼貌对话 (Questions and Polite Conversations)",
+    meta: "📝 20 Questions | 💬 Questions & Polite Conversations",
+    active: true
   }
 ];
 

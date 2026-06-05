@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <rect width="400" height="300" rx="15" fill="#f8fafc" stroke="#e2e8f0" stroke-width="2"/>
+  <circle cx="200" cy="120" r="50" fill="#dcfce7"/>
+  <path d="M165 120 L 190 145 L 240 95" fill="none" stroke="#22c55e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="200" y="220" font-family="system-ui, sans-serif" font-size="28" font-weight="bold" fill="#22c55e" text-anchor="middle">✓</text>
+  <text x="200" y="275" font-family="system-ui, sans-serif" font-size="16" font-weight="bold" fill="#64748b" text-anchor="middle">
+    Red Checkmark Placeholder (红色的勾)
+  </text>
+</svg>
