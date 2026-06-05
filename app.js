@@ -13,6 +13,18 @@ const QUIZ_INDEX = [
     title: "Quiz 2 – 我喜欢吃什么 (What I Like to Eat)",
     meta: "📝 20 Questions | 🍔 Food & Drinks",
     active: true
+  },
+  {
+    id: 3,
+    title: "Quiz 3 – 数字与星期 (Numbers and Days of the Week)",
+    meta: "📝 20 Questions | 📅 Numbers & Time",
+    active: true
+  },
+  {
+    id: 4,
+    title: "Quiz 4 – 感觉与情绪 (Feelings and Emotions)",
+    meta: "📝 20 Questions | 😊 Feelings & Emotions",
+    active: true
   }
 ];
 

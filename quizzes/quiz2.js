@@ -171,7 +171,7 @@ window.QUIZ_DATA = {
     {
       id: 14,
       type: "choice",
-      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“我喜欢吃面句。” (Find the incorrect character in the sentence.)",
+      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“我(wǒ)喜(xǐ)欢(huan)吃(chī)面(miàn)句(jù)。” (Find the incorrect character in the sentence.)",
       options: [
         { key: "A", text: "喜 (xǐ)" },
         { key: "B", text: "吃 (chī)" },
@@ -183,7 +183,7 @@ window.QUIZ_DATA = {
     {
       id: 15,
       type: "choice",
-      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“我想喝汤，哥哥想渴水。” (Find the incorrect character in the sentence.)",
+      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“我(wǒ)想(xiǎng)喝(hē)汤(tāng)，哥(gē)哥(ge)想(xiǎng)渴(kě)水(shuǐ)。” (Find the incorrect character in the sentence.)",
       options: [
         { key: "A", text: "喝 (hē)" },
         { key: "B", text: "渴 (kě)" },
@@ -222,7 +222,7 @@ window.QUIZ_DATA = {
       question: "在(zài)中(zhōng)国(guó)，很(hěn)多(duō)家(jiā)庭(tíng)喜(xǐ)欢(huan)在(zài)过(guò)新(xīn)年(nián)（春(chūn)节(jié)）的(de)时(shí)候(hou)吃(chī)“饺(jiǎo)子(zi)”。",
       options: [
         { key: "A", text: "对 (duì)" },
-        { key: "B", text: "不对 (bùduì)" }
+        { key: "B", text: "不对 (bù duì)" }
       ],
       answer: "A",
       explanation: "A - 解析：对。饺子是中国北方春节的传统食物，象征着团圆和好运。"
@@ -230,7 +230,7 @@ window.QUIZ_DATA = {
     {
       id: 19,
       type: "text",
-      question: "你(nǐ)喜(xǐ)欢(huan)吃(chī)什(shén)么(me)？(What do you like to eat? 请写一句话)",
+      question: "你(nǐ)喜(xǐ)欢(huan)吃(chī)什(shén)么(me)？(What do you like to eat? 请(qǐng)写(xiě)一(yí)句(jù)话(huà))",
       referenceAnswer: "我喜欢吃苹果。（或：我喜欢吃饺子。）",
       explanation: "参考答案： 我喜欢吃苹果。（或：我喜欢吃饺子。） - 解析：考察“我喜欢吃……”句型的拼写与表达。"
     },

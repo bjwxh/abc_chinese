@@ -171,7 +171,7 @@ window.QUIZ_DATA = {
     {
       id: 14,
       type: "choice",
-      question: "找出句子中的错字：“这是我妹妹，他今年八岁。”",
+      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“这(zhè)是(shì)我(wǒ)妹(mèi)妹(mei)，他(tā)今(jīn)年(nián)八(bā)岁(suì)。”",
       options: [
         { key: "A", text: "是 (shì)" },
         { key: "B", text: "妹 (mèi)" },
@@ -183,7 +183,7 @@ window.QUIZ_DATA = {
     {
       id: 15,
       type: "choice",
-      question: "找出句子中的错字：“她有一只小猫，两只小兔孑。”",
+      question: "找(zhǎo)出(chū)句(jù)子(zi)中(zhōng)的(de)错(cuò)字(zì)：“她(tā)有(yǒu)一(yì)只(zhī)小(xiǎo)猫(māo)，两(liǎng)只(zhī)小(xiǎo)兔(tù)孑(jié)。”",
       options: [
         { key: "A", text: "有 (yǒu)" },
         { key: "B", text: "只 (zhī)" },
@@ -195,7 +195,7 @@ window.QUIZ_DATA = {
     {
       id: 16,
       type: "choice",
-      question: "请把这些词排成一个正确的句子：①是 ②爷(yé)爷(ye) ③他(tā) ④我(wǒ)的(de)",
+      question: "请(qǐng)把(bǎ)这(zhè)些(xiē)词(cí)排(pái)成(chéng)一(yí)个(gè)正(zhèng)确(què)的(de)句(jù)子(zi)：①是(shì) ②爷(yé)爷(ye) ③他(tā) ④我(wǒ)的(de)",
       options: [
         { key: "A", text: "③①④② (他是我的爷爷)" },
         { key: "B", text: "①③②④ (是他爷爷我的)" },
@@ -207,7 +207,7 @@ window.QUIZ_DATA = {
     {
       id: 17,
       type: "choice",
-      question: "请把这些词排成一个正确的句子：①鸟(niǎo) ②两(liǎng)只(zhī) ③家(jiā) ④有(yǒu) ⑤我(wǒ)",
+      question: "请(qǐng)把(bǎ)这(zhè)些(xiē)词(cí)排(pái)成(chéng)一(yí)个(gè)正(zhèng)确(què)的(de)句(jù)子(zi)：①鸟(niǎo) ②两(liǎng)只(zhī) ③家(jiā) ④有(yǒu) ⑤我(wǒ)",
       options: [
         { key: "A", text: "⑤③④②① (我家有两只鸟)" },
         { key: "B", text: "⑤④②①③ (我有两只鸟家)" },
@@ -222,7 +222,7 @@ window.QUIZ_DATA = {
       question: "在(zài)中(zhōng)国(guó)家(jiā)庭(tíng)里(lǐ)，称(chēng)呼(hu)妈(mā)妈(ma)的(de)妈(mā)妈(ma)叫(jiào)“奶(nǎi)奶(nai)”。",
       options: [
         { key: "A", text: "对 (duì)" },
-        { key: "B", text: "不对 (bùduì)" }
+        { key: "B", text: "不对 (bù duì)" }
       ],
       answer: "B",
       explanation: "B - 解析：不对，妈妈的妈妈叫“外婆”(maternal grandmother)，爸爸的妈妈才叫“奶奶”(paternal grandmother)。"
