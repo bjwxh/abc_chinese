@@ -92,6 +92,12 @@
     let currentQuestionIndex = 0;
     let answers = {}; // Maps questionId -> userAnswer
 
+    function formatRuby(text) {
+      if (!text) return "";
+      // Converts "这(zhè)" to "<ruby>这<rt>zhè</rt></ruby>"
+      return text.replace(/([\u4e00-\u9fa5])\(([^)]+)\)/g, '<ruby>$1<rt>$2</rt></ruby>');
+    }
+
     document.addEventListener("DOMContentLoaded", () => {
       initAppState();
       if (!STATE.currentKid) {
@@ -133,7 +139,7 @@
 
       if (q.type === "listening") {
         htmlContent = `
-          <div class="question-text">${q.question}</div>
+          <div class="question-text">${formatRuby(q.question)}</div>
           <div style="text-align: center; margin: 1.5rem 0;">
             <button class="audio-play-btn" onclick="playTTS('${q.audioText}')">
               🔊 Play Voice Prompt (听力)
@@ -153,7 +159,7 @@
         `;
       } else if (q.type === "image-match") {
         htmlContent = `
-          <div class="question-text">${q.question}</div>
+          <div class="question-text">${formatRuby(q.question)}</div>
           <img src="${q.image}" class="question-illustration" alt="Matching illustration">
           <div class="options-grid">
             ${q.options.map(opt => `
@@ -166,7 +172,7 @@
         `;
       } else if (q.type === "choice") {
         htmlContent = `
-          <div class="question-text">${q.question}</div>
+          <div class="question-text">${formatRuby(q.question)}</div>
           <div class="options-grid">
             ${q.options.map(opt => `
               <button class="option-btn ${answers[q.id] === opt.key ? 'selected' : ''}" onclick="selectAnswer(${q.id}, '${opt.key}')">
@@ -178,7 +184,7 @@
         `;
       } else if (q.type === "text") {
         htmlContent = `
-          <div class="question-text">${q.question}</div>
+          <div class="question-text">${formatRuby(q.question)}</div>
           <textarea 
             id="text-input-${q.id}" 
             class="text-answer-input" 
@@ -266,7 +272,7 @@
         return `
           <div class="review-item ${statusClass}">
             <div class="review-status-tag">${statusText}</div>
-            <div class="review-q-text">Q${idx + 1}. ${q.question}</div>
+            <div class="review-q-text">Q${idx + 1}. ${formatRuby(q.question)}</div>
             ${q.type === 'listening' ? `<div style="font-size:0.95rem; margin-bottom: 0.8rem;">📢 Audio said: <strong>${q.audioText}</strong> (${q.pinyin})</div>` : ''}
             ${answerCompareHtml}
             <div class="review-explanation">
