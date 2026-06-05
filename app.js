@@ -25,6 +25,12 @@ const QUIZ_INDEX = [
     title: "Quiz 4 – 感觉与情绪 (Feelings and Emotions)",
     meta: "📝 20 Questions | 😊 Feelings & Emotions",
     active: true
+  },
+  {
+    id: 5,
+    title: "Quiz 5 – 一天的作息 (Daily Routine)",
+    meta: "📝 20 Questions | ⏰ Daily Routine & Time",
+    active: true
   }
 ];
 
