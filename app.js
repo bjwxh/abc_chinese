@@ -12,9 +12,9 @@ const QUIZ_DATA = {
       pinyin: "Tā shì wǒ de gēge.",
       question: "他(tā)是(shì)谁(shuí)？",
       options: [
-        { key: "A", text: "弟弟 (Little brother)" },
-        { key: "B", text: "哥哥 (Older brother)" },
-        { key: "C", text: "爸爸 (Dad)" }
+        { key: "A", text: "弟弟 (dìdi)" },
+        { key: "B", text: "哥哥 (gēge)" },
+        { key: "C", text: "爸爸 (bàba)" }
       ],
       answer: "B",
       explanation: "B - 解析：听力说是“哥哥” (older brother)."
@@ -26,9 +26,9 @@ const QUIZ_DATA = {
       pinyin: "Yéye hé nǎinai zài shuìjiào.",
       question: "谁(shuí)在(zài)睡(shuì)觉(jiào)？",
       options: [
-        { key: "A", text: "爸爸和妈妈 (Dad and Mom)" },
-        { key: "B", text: "哥哥和姐姐 (Older brother and sister)" },
-        { key: "C", text: "爷爷和奶奶 (Grandpa and Grandma)" }
+        { key: "A", text: "爸爸和妈妈 (bàba hé māma)" },
+        { key: "B", text: "哥哥和姐姐 (gēge hé jiějie)" },
+        { key: "C", text: "爷爷和奶奶 (yéye hé nǎinai)" }
       ],
       answer: "C",
       explanation: "C - 解析：听力提到爷爷(grandpa)和奶奶(grandma)在睡觉。"
@@ -40,9 +40,9 @@ const QUIZ_DATA = {
       pinyin: "Wǒ yǒu yì zhī māo hé yì tiáo yú.",
       question: "我(wǒ)有(yǒu)什(shén)么(me)？",
       options: [
-        { key: "A", text: "猫和鱼 (Cat and fish)" },
-        { key: "B", text: "狗 and 鸟 (Dog and bird)" },
-        { key: "C", text: "兔子和猫 (Rabbit and cat)" }
+        { key: "A", text: "猫和鱼 (māo hé yú)" },
+        { key: "B", text: "狗和鸟 (gǒu hé niǎo)" },
+        { key: "C", text: "兔子和猫 (tùzi hé māo)" }
       ],
       answer: "A",
       explanation: "A - 解析：听力中提到的是猫(cat)和鱼(fish)。"
@@ -53,9 +53,9 @@ const QUIZ_DATA = {
       image: "assets/grandfather_newspaper.png",
       question: "图(tú)片(piàn)里(lǐ)是(shì)谁(shuí)？",
       options: [
-        { key: "A", text: "爸爸 (Dad)" },
-        { key: "B", text: "爷爷 (Grandpa)" },
-        { key: "C", text: "哥哥 (Older brother)" }
+        { key: "A", text: "爸爸 (bàba)" },
+        { key: "B", text: "爷爷 (yéye)" },
+        { key: "C", text: "哥哥 (gēge)" }
       ],
       answer: "B",
       explanation: "B - 解析：图片是爷爷(grandfather)。"
@@ -66,9 +66,9 @@ const QUIZ_DATA = {
       image: "assets/cute_bunny.png",
       question: "这(zhè)是(shì)什(shén)么(me)动(dòng)物(wù)？",
       options: [
-        { key: "A", text: "狗 (Dog)" },
-        { key: "B", text: "鸟 (Bird)" },
-        { key: "C", text: "兔子 (Rabbit)" }
+        { key: "A", text: "狗 (gǒu)" },
+        { key: "B", text: "鸟 (niǎo)" },
+        { key: "C", text: "兔子 (tùzi)" }
       ],
       answer: "C",
       explanation: "C - 解析：图片是小兔子(bunny)。"
@@ -79,9 +79,9 @@ const QUIZ_DATA = {
       image: "assets/three_girls.png",
       question: "应(yīng)该(gāi)用(yòng)哪(nǎ)个(gè)词(cí)？",
       options: [
-        { key: "A", text: "她们 (They - girls)" },
-        { key: "B", text: "他们 (They - boys/mixed)" },
-        { key: "C", text: "我们 (We)" }
+        { key: "A", text: "她们 (tāmen)" },
+        { key: "B", text: "他们 (tāmen)" },
+        { key: "C", text: "我们 (wǒmen)" }
       ],
       answer: "A",
       explanation: "A - 解析：“她们”(they) 专门用来指代全都是女性的群体。"
