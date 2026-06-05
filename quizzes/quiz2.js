@@ -7,12 +7,12 @@ window.QUIZ_DATA = {
       id: 1,
       type: "listening",
       audioText: "我喜欢吃苹果。",
-      pinyin: "Wǒ xǐhuan chī píngguǒ.",
+      pinyin: "Wǒ xǐ huan chī píng guǒ.",
       question: "听(tīng)力(lì)里(lǐ)提(tí)到(dào)了(le)什(shén)么(me)水(shuǐ)果(guǒ)？",
       options: [
-        { key: "A", text: "苹果 (píngguǒ)" },
-        { key: "B", text: "香蕉 (xiāngjiāo)" },
-        { key: "C", text: "鸡蛋 (jīdàn)" }
+        { key: "A", text: "苹果 (píng guǒ)" },
+        { key: "B", text: "香蕉 (xiāng jiāo)" },
+        { key: "C", text: "鸡蛋 (jī dàn)" }
       ],
       answer: "A",
       explanation: "A - 解析：听力提到的是“苹果” (apple)。"
@@ -21,12 +21,12 @@ window.QUIZ_DATA = {
       id: 2,
       type: "listening",
       audioText: "妹妹在喝牛奶。",
-      pinyin: "Mèimei zài hē niúnǎi.",
+      pinyin: "Mèi mei zài hē niú nǎi.",
       question: "妹(mèi)妹(mei)在(zài)喝(hē)什(shén)么(me)？",
       options: [
         { key: "A", text: "水 (shuǐ)" },
-        { key: "B", text: "牛奶 (niúnǎi)" },
-        { key: "C", text: "果汁 (guǒzhī)" }
+        { key: "B", text: "牛奶 (niú nǎi)" },
+        { key: "C", text: "果汁 (guǒ zhī)" }
       ],
       answer: "B",
       explanation: "B - 解析：听力中提到妹妹在喝“牛奶” (milk)。"
@@ -35,12 +35,12 @@ window.QUIZ_DATA = {
       id: 3,
       type: "listening",
       audioText: "爸爸说：“我很饿，我想吃炒饭。”",
-      pinyin: "Bàba shuō: 'Wǒ hěn è, wǒ xiǎng chī chǎofàn.'",
+      pinyin: "Bà ba shuō: 'Wǒ hěn è, wǒ xiǎng chī chǎo fàn.'",
       question: "爸(bà)爸(ba)想(xiǎng)吃(chī)什(shén)么(me)？",
       options: [
         { key: "A", text: "面 (miàn)" },
-        { key: "B", text: "饺子 (jiǎozi)" },
-        { key: "C", text: "炒饭 (chǎofàn)" }
+        { key: "B", text: "饺子 (jiǎo zi)" },
+        { key: "C", text: "炒饭 (chǎo fàn)" }
       ],
       answer: "C",
       explanation: "C - 解析：爸爸说他想吃“炒饭” (fried rice)。"
@@ -64,9 +64,9 @@ window.QUIZ_DATA = {
       image: "assets/family_eating_dumplings.png",
       question: "他(tā)们(men)在(zài)吃(chī)什(shén)么(me)？",
       options: [
-        { key: "A", text: "饺子 (jiǎozi)" },
-        { key: "B", text: "面包 (miànbāo)" },
-        { key: "C", text: "鸡蛋 (jīdàn)" }
+        { key: "A", text: "饺子 (jiǎo zi)" },
+        { key: "B", text: "面包 (miàn bāo)" },
+        { key: "C", text: "鸡蛋 (jī dàn)" }
       ],
       answer: "A",
       explanation: "A - 解析：图片里一家人正在吃“饺子” (dumplings)。"
@@ -78,8 +78,8 @@ window.QUIZ_DATA = {
       question: "这(zhè)是(shì)什(shén)么(me)？",
       options: [
         { key: "A", text: "水 (shuǐ)" },
-        { key: "B", text: "果汁 (guǒzhī)" },
-        { key: "C", text: "牛奶 (niúnǎi)" }
+        { key: "B", text: "果汁 (guǒ zhī)" },
+        { key: "C", text: "牛奶 (niú nǎi)" }
       ],
       answer: "B",
       explanation: "B - 解析：橙色的饮料是“果汁” (juice)。"
@@ -113,7 +113,7 @@ window.QUIZ_DATA = {
       type: "choice",
       question: "妈(mā)妈(ma)做(zuò)的(de)饭(fàn)很(hěn) _____！",
       options: [
-        { key: "A", text: "好吃 (hǎochī)" },
+        { key: "A", text: "好吃 (hǎo chī)" },
         { key: "B", text: "大 (dà)" },
         { key: "C", text: "叫 (jiào)" }
       ],
@@ -139,7 +139,7 @@ window.QUIZ_DATA = {
       options: [
         { key: "A", text: "饿 (è)" },
         { key: "B", text: "饱 (bǎo)" },
-        { key: "C", text: "喜欢 (xǐhuan)" }
+        { key: "C", text: "喜欢 (xǐ huan)" }
       ],
       answer: "B",
       explanation: "B - 解析：吃了很多饭之后，感觉会是“饱” (full)。"
@@ -149,9 +149,9 @@ window.QUIZ_DATA = {
       type: "choice",
       question: "今(jīn)天(tiān)早(zǎo)上(shang)，我(wǒ)吃(chī)了(le)一(yí)个(gè) _____。(egg)",
       options: [
-        { key: "A", text: "鸡蛋 (jīdàn)" },
-        { key: "B", text: "面包 (miànbāo)" },
-        { key: "C", text: "香蕉 (xiāngjiāo)" }
+        { key: "A", text: "鸡蛋 (jī dàn)" },
+        { key: "B", text: "面包 (miàn bāo)" },
+        { key: "C", text: "香蕉 (xiāng jiāo)" }
       ],
       answer: "A",
       explanation: "A - 解析：根据英文提示 egg，应该选“鸡蛋”。"
@@ -161,9 +161,9 @@ window.QUIZ_DATA = {
       type: "choice",
       question: "早(zǎo)上(shang)吃(chī)的(de)饭(fàn)叫(jiào) _____。(breakfast)",
       options: [
-        { key: "A", text: "午餐 (wǔcān)" },
-        { key: "B", text: "晚餐 (wǎncān)" },
-        { key: "C", text: "早餐 (zǎocān)" }
+        { key: "A", text: "午餐 (wǔ cān)" },
+        { key: "B", text: "晚餐 (wǎn cān)" },
+        { key: "C", text: "早餐 (zǎo cān)" }
       ],
       answer: "C",
       explanation: "C - 解析：早上吃的饭叫做“早餐” (breakfast)。"

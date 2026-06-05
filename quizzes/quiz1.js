@@ -7,12 +7,12 @@ window.QUIZ_DATA = {
       id: 1,
       type: "listening",
       audioText: "他是我的哥哥。",
-      pinyin: "Tā shì wǒ de gēge.",
+      pinyin: "Tā shì wǒ de gē ge.",
       question: "他(tā)是(shì)谁(shuí)？",
       options: [
-        { key: "A", text: "弟弟 (dìdi)" },
-        { key: "B", text: "哥哥 (gēge)" },
-        { key: "C", text: "爸爸 (bàba)" }
+        { key: "A", text: "弟弟 (dì di)" },
+        { key: "B", text: "哥哥 (gē ge)" },
+        { key: "C", text: "爸爸 (bà ba)" }
       ],
       answer: "B",
       explanation: "B - 解析：听力说是“哥哥” (older brother)."
@@ -21,12 +21,12 @@ window.QUIZ_DATA = {
       id: 2,
       type: "listening",
       audioText: "爷爷和奶奶在睡觉。",
-      pinyin: "Yéye hé nǎinai zài shuìjiào.",
+      pinyin: "Yéye hé nǎi nai zài shuì jiào.",
       question: "谁(shuí)在(zài)睡(shuì)觉(jiào)？",
       options: [
-        { key: "A", text: "爸爸和妈妈 (bàba hé māma)" },
-        { key: "B", text: "哥哥和姐姐 (gēge hé jiějie)" },
-        { key: "C", text: "爷爷和奶奶 (yéye hé nǎinai)" }
+        { key: "A", text: "爸爸和妈妈 (bà ba hé mā ma)" },
+        { key: "B", text: "哥哥和姐姐 (gē ge hé jiě jie)" },
+        { key: "C", text: "爷爷和奶奶 (yé ye hé nǎi nai)" }
       ],
       answer: "C",
       explanation: "C - 解析：听力提到爷爷(grandpa)和奶奶(grandma)在睡觉。"
@@ -40,7 +40,7 @@ window.QUIZ_DATA = {
       options: [
         { key: "A", text: "猫和鱼 (māo hé yú)" },
         { key: "B", text: "狗和鸟 (gǒu hé niǎo)" },
-        { key: "C", text: "兔子和猫 (tùzi hé māo)" }
+        { key: "C", text: "兔子和猫 (tù zi hé māo)" }
       ],
       answer: "A",
       explanation: "A - 解析：听力中提到的是猫(cat)和鱼(fish)。"
@@ -51,9 +51,9 @@ window.QUIZ_DATA = {
       image: "assets/grandfather_newspaper.png",
       question: "图(tú)片(piàn)里(lǐ)是(shì)谁(shuí)？",
       options: [
-        { key: "A", text: "爸爸 (bàba)" },
-        { key: "B", text: "爷爷 (yéye)" },
-        { key: "C", text: "哥哥 (gēge)" }
+        { key: "A", text: "爸爸 (bà ba)" },
+        { key: "B", text: "爷爷 (yé ye)" },
+        { key: "C", text: "哥哥 (gē ge)" }
       ],
       answer: "B",
       explanation: "B - 解析：图片是爷爷(grandfather)。"
@@ -66,7 +66,7 @@ window.QUIZ_DATA = {
       options: [
         { key: "A", text: "狗 (gǒu)" },
         { key: "B", text: "鸟 (niǎo)" },
-        { key: "C", text: "兔子 (tùzi)" }
+        { key: "C", text: "兔子 (tù zi)" }
       ],
       answer: "C",
       explanation: "C - 解析：图片是小兔子(bunny)。"
@@ -77,9 +77,9 @@ window.QUIZ_DATA = {
       image: "assets/three_girls.png",
       question: "应(yīng)该(gāi)用(yòng)哪(nǎ)个(gè)词(cí)？",
       options: [
-        { key: "A", text: "她们 (tāmen)" },
-        { key: "B", text: "他们 (tāmen)" },
-        { key: "C", text: "我们 (wǒmen)" }
+        { key: "A", text: "她们 (tā men)" },
+        { key: "B", text: "他们 (tā men)" },
+        { key: "C", text: "我们 (wǒ men)" }
       ],
       answer: "A",
       explanation: "A - 解析：“她们”(they) 专门用来指代全都是女性的群体。"
@@ -127,7 +127,7 @@ window.QUIZ_DATA = {
       options: [
         { key: "A", text: "几 (jǐ)" },
         { key: "B", text: "谁 (shéi)" },
-        { key: "C", text: "为什么 (wèishénme)" }
+        { key: "C", text: "为什么 (wèi shén me)" }
       ],
       answer: "A",
       explanation: "A - 解析：问年龄用疑问词“几”(how many) 岁。"
@@ -150,8 +150,8 @@ window.QUIZ_DATA = {
       question: "他(tā)们(men)是(shì) _____ ？(Who are they?)",
       options: [
         { key: "A", text: "谁 (shuí)" },
-        { key: "B", text: "哪里 (nǎlǐ)" },
-        { key: "C", text: "什么 (shénme)" }
+        { key: "B", text: "哪里 (nǎ lǐ)" },
+        { key: "C", text: "什么 (shén me)" }
       ],
       answer: "A",
       explanation: "A - 解析：问“是谁”用疑问词“谁”(who)。"
