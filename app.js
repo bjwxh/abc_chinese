@@ -223,8 +223,8 @@ const QUIZ_DATA = {
       type: "choice",
       question: "在(zài)中(zhōng)国(guó)家(jiā)庭(tíng)里(lǐ)，称(chēng)呼(hu)妈(mā)妈(ma)的(de)妈(mā)妈(ma)叫(jiào)“奶(nǎi)奶(nai)”。",
       options: [
-        { key: "A", text: "对 (True)" },
-        { key: "B", text: "不对 (False)" }
+        { key: "A", text: "对 (duì)" },
+        { key: "B", text: "不对 (bùduì)" }
       ],
       answer: "B",
       explanation: "B - 解析：不对，妈妈的妈妈叫“外婆”(maternal grandmother)，爸爸的妈妈才叫“奶奶”(paternal grandmother)。"
