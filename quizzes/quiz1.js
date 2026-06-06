@@ -237,7 +237,7 @@ window.QUIZ_DATA = {
     {
       id: 20,
       type: "text",
-      question: "请(qǐng)用(yòng)中(zhōng)文(wén)写(xiě) 3 句(jù)话(huà)介(jiè)绍(shào)你(nǐ)的(de)家(jiā)人(rén)。你可以用这些词：家 (family), 有 (have), 爱 (love)。",
+      question: "请(qǐng)用(yòng)中(zhōng)文(wén)写(xiě) 3 句(jù)话(huà)介(jiè)绍(shào)你(nǐ)的(de)家(jiā)人(rén)。你可以用这些词：家(jiā), 有(yǒu), 爱(ài)。",
       referenceAnswer: "我家有四个人。他们是爸爸、妈妈、哥哥和我。我爱我的家。",
       explanation: "参考答案： 我家有四个人。他们是爸爸、妈妈、哥哥和我。我爱我的家。- 解析：综合运用关于人称、家庭和基础动词的能力。"
     }
